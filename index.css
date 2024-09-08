@@ -1,0 +1,236 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E2DAD6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.kapsayıcı {
+    display: flex;
+    flex-direction: row; /* Yatay düzen (masaüstü) */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Tüm sayfada tek scroll */
+}
+
+.sabitmenü {
+    width: 300px;
+    background-color: #6482AD;
+    color: #F5EDED;
+    padding: 20px;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    position: fixed; /* Sabit sidebar */
+    top: 0;
+    left: 0;
+    height: 100%; /* Tüm ekranı kapsar */
+    overflow-y: auto; /* İçerik fazla olursa sadece burada kaydırma */
+}
+
+.sabitmenü img {
+    border-radius: 50%;
+    width: 120px;
+    display: block;
+    margin: 0 auto 20px;
+    border: 3px solid #F5EDED;
+    transition: transform 0.3s ease;
+}
+
+.sabitmenü img:hover {
+    transform: scale(1.1); /* Hover efekti */
+}
+
+.sabitmenü h1 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #F5EDED;
+}
+
+.sabitmenü p,
+.sabitmenü a {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #E2DAD6;
+}
+
+.sabitmenü a {
+    color: #F5EDED;
+    text-decoration: none;
+}
+
+.anamenü {
+    margin-left: 300px; /* Sabit menü genişliği kadar kaydır */
+    width: calc(100% - 300px); /* Geri kalan genişliği kapla */
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* İçerik kaydırılabilir */
+    height: 100vh; /* Yüksekliği tam ekran */
+    box-sizing: border-box;
+}
+
+.anamenü h2 {
+    font-size: 2em;
+    color: #34495e;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #6482AD;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.anamenü .bölüm {
+    margin-bottom: 50px;
+}
+
+.anamenü .bölüm h2 {
+    font-size: 1.8em;
+    color: #34495e;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #E2DAD6;
+    padding-bottom: 10px;
+}
+
+.anamenü .bölüm p,
+.anamenü .bölüm ul {
+    font-size: 1.1em;
+    color: #34495e;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.anamenü .bölüm ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.anamenü .bölüm ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Taşma durumunda satıra geçiş */
+}
+
+.anamenü .bölüm ul li .balonlar {
+    display: flex;
+    gap: 5px;
+}
+
+.balon {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #bdc3c7;
+}
+
+.balon.dolu {
+    background-color: #6482AD;
+}
+
+.iletişim-bilgileri {
+    text-align: center;
+    background-color: #6482AD;
+    color: #F5EDED;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+.iletişim-bilgileri a {
+    color: #F5EDED;
+    text-decoration: none;
+}
+
+.sosyal-ikonlar {
+    margin-top: 15px;
+}
+
+.sosyal-ikonlar a {
+    margin: 0 15px;
+    color: #F5EDED;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sosyal-ikonlar a:hover {
+    color: #7FA1C3;
+}
+
+/* Responsive */
+/* Masaüstü Ekranlar İçin Ek Düzenlemeler */
+@media only screen and (min-width: 769px) {
+    .sabitmenü {
+        background: linear-gradient(to bottom, #6482AD, #5a6a8b);
+        color: #F5EDED;
+        padding: 30px; /* Daha fazla iç boşluk */
+    }
+
+    .sabitmenü h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .sabitmenü p,
+    .sabitmenü a {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+    .anamenü {
+        margin-left: 300px;
+        width: calc(100% - 300px);
+        padding: 30px; /* Daha fazla iç boşluk */
+    }
+
+    .anamenü h2 {
+        font-size: 2.2em;
+        margin-bottom: 25px;
+    }
+
+    .anamenü .bölüm {
+        margin-bottom: 60px;
+    }
+
+    .anamenü .bölüm h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .anamenü .bölüm ul li {
+        font-size: 1.2em;
+    }
+
+    .iletişim-bilgileri {
+        padding: 30px;
+        margin-top: 40px;
+    }
+
+    .sosyal-ikonlar a {
+        margin: 0 20px;
+        font-size: 1.8em;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .sabitmenü img {
+        width: 80px;
+    }
+
+    .anamenü h2 {
+        font-size: 1.5em;
+    }
+
+    .anamenü p,
+    .anamenü ul {
+        font-size: 1em;
+    }
+}
