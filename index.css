@@ -20,7 +20,6 @@ html, body {
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     box-sizing: border-box; /* İçerik kutusunun boyutunu kapsama */
-    z-index: 10; /* Sabit menü yukarıda kalacak */
 }
 
 .sabitmenu img {
@@ -61,7 +60,6 @@ html, body {
     overflow-y: auto;
     height: 100vh; /* 100% yüksekliğe ayarla */
     box-sizing: border-box; /* İçerik kutusunun boyutunu kapsama */
-    z-index: 1; /* İçerik sabit menünün altında kalmamalı */
 }
 
 .anamenü h2 {
@@ -175,8 +173,7 @@ html, body {
         margin-left: 0;
         width: 100%;
         padding: 10px;
-        padding-top: 140px; /* Sabit menünün altında kalması için yeterli boşluk ekle */
-        z-index: 1; /* İçeriğin sabit menünün altında kalmasını önle */
+        margin-top: 200px; /* Kenar çubuğunun altında kalması için */
     }
 
     .sabitmenu img {
