@@ -165,7 +165,6 @@ html, body {
         top: 0;
         left: 0;
         z-index: 10; /* Üstte kalmasını sağla */
-        margin-bottom: 20px;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Üstte gölge */
     }
 
@@ -173,7 +172,7 @@ html, body {
         margin-left: 0;
         width: 100%;
         padding: 10px;
-        margin-top: 200px; /* Kenar çubuğunun altında kalması için */
+        margin-top: 240px; /* Sabit menü ile ana menü arasında 20px boşluk */
     }
 
     .sabitmenu img {
@@ -185,6 +184,7 @@ html, body {
         box-sizing: border-box;
     }
 }
+
 
 @media only screen and (max-width: 480px) {
     .sabitmenu img {
@@ -205,7 +205,6 @@ html, body {
     }
 }
 
-/* For better mobile design: Add a responsive design for smaller screens */
 @media only screen and (max-width: 360px) {
     .sabitmenu {
         padding: 10px;
