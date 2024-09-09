@@ -4,35 +4,27 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-}
-
-.wrapper {
-    display: flex;
-    width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Yatay kaydırmayı engelle */
 }
 
-.sidebar {
+.sabitmenu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px; /* Sabit genişlik */
+    width: 300px;
     height: 100%;
     background-color: #6482AD;
     color: #F5EDED;
     padding: 20px;
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
-    box-sizing: border-box;
-    z-index: 1000; /* Üstte görünmesini sağlar */
+    box-sizing: border-box; /* İçerik kutusunun boyutunu kapsama */
 }
 
-.sidebar img {
+.sabitmenu img {
     border-radius: 50%;
     width: 120px;
     display: block;
@@ -40,40 +32,39 @@ body {
     border: 3px solid #F5EDED;
 }
 
-.sidebar h1 {
+.sabitmenu h1 {
     text-align: center;
     font-size: 1.8em;
     margin-bottom: 10px;
     color: #F5EDED;
 }
 
-.sidebar p,
-.sidebar a {
+.sabitmenu p,
+.sabitmenu a {
     text-align: center;
     font-size: 1em;
     margin-bottom: 15px;
     color: #E2DAD6;
 }
 
-.sidebar a {
+.sabitmenu a {
     color: #F5EDED;
     text-decoration: none;
     display: block;
 }
 
-.main-content {
-    flex-grow: 1;
-    margin-left: 300px; /* Sidebar genişliği kadar boşluk bırak */
+.anamenü {
+    margin-left: 300px;
+    width: calc(100% - 300px);
     padding: 20px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-    min-height: 100vh;
-    width: calc(100% - 300px); /* Sidebar'dan kalan genişliği kapla */
-    box-sizing: border-box;
+    max-height: 100vh;
+    box-sizing: border-box; /* İçerik kutusunun boyutunu kapsama */
 }
 
-.main-content h2 {
+.anamenü h2 {
     font-size: 2em;
     color: #34495e;
     margin-bottom: 20px;
@@ -82,13 +73,13 @@ body {
     text-align: center;
 }
 
-.main-content .section {
+.anamenü .section {
     margin-bottom: 50px;
     text-align: center;
 }
 
-.main-content .section p,
-.main-content .section ul {
+.anamenü .section p,
+.anamenü .section ul {
     font-size: 1.1em;
     color: #34495e;
     text-align: left;
@@ -96,20 +87,20 @@ body {
     max-width: 600px;
 }
 
-.main-content .section ul {
+.anamenü .section ul {
     list-style-type: none;
     padding: 0;
 }
 
-.main-content .section ul li {
+.anamenü .section ul li {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Taşma durumunda satıra geçiş */
 }
 
-.main-content .section ul li .balloons {
+.anamenü .section ul li .balloons {
     display: flex;
     gap: 5px;
 }
@@ -132,6 +123,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     margin-top: 30px;
+    box-sizing: border-box; /* İçerik kutusunun boyutunu kapsama */
 }
 
 .contact-info a {
@@ -155,82 +147,86 @@ body {
     color: #7FA1C3;
 }
 
-/* Responsive Design - Küçük ekranlar */
+/* Responsive Design */
 @media only screen and (max-width: 1200px) {
-    .sidebar {
+    .sabitmenu {
         width: 250px;
     }
 
-    .main-content {
+    .anamenü {
         margin-left: 250px;
         width: calc(100% - 250px);
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .wrapper {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        position: relative;
+    .sabitmenu {
         width: 100%;
         height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10; /* Üstte kalmasını sağla */
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Üstte gölge */
     }
 
-    .main-content {
+    .anamenü {
         margin-left: 0;
         width: 100%;
-        padding: 20px;
+        padding: 10px;
+        margin-top: 200px; /* Kenar çubuğunun altında kalması için */
     }
 
-    .sidebar img {
+    .sabitmenu img {
         width: 100px;
     }
 
     .contact-info {
         width: 100%;
+        box-sizing: border-box;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    .sidebar img {
+    .sabitmenu img {
         width: 80px;
     }
 
-    .main-content h2 {
+    .anamenü h2 {
         font-size: 1.5em;
     }
 
-    .main-content .section p,
-    .main-content .section ul {
+    .anamenü .section p,
+    .anamenü .section ul {
         font-size: 1em;
     }
 
-    .main-content {
+    .anamenü {
         padding: 10px;
     }
 }
 
+/* For better mobile design: Add a responsive design for smaller screens */
 @media only screen and (max-width: 360px) {
-    .sidebar {
+    .sabitmenu {
         padding: 10px;
     }
 
-    .sidebar img {
+    .sabitmenu img {
         width: 70px;
     }
 
-    .sidebar h1 {
+    .sabitmenu h1 {
         font-size: 1.5em;
     }
 
-    .main-content h2 {
+    .anamenü h2 {
         font-size: 1.3em;
     }
 
-    .main-content .section p,
-    .main-content .section ul {
+    .anamenü .section p,
+    .anamenü .section ul {
         font-size: 0.9em;
     }
 
