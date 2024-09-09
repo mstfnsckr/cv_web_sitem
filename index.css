@@ -173,7 +173,8 @@ html, body {
         margin-left: 0;
         width: 100%;
         padding: 10px;
-        margin-top: 200px; /* Kenar çubuğunun altında kalması için */
+        padding-top: 100px; /* Kenar çubuğunun yüksekliğine göre ayarla */
+        z-index: 1; /* İçeriğin sabit menünün altında kalmasını önle */
     }
 
     .sabitmenu img {
@@ -183,25 +184,6 @@ html, body {
     .contact-info {
         width: 100%;
         box-sizing: border-box;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .sabitmenu img {
-        width: 80px;
-    }
-
-    .anamenü h2 {
-        font-size: 1.5em;
-    }
-
-    .anamenü .section p,
-    .anamenü .section ul {
-        font-size: 1em;
-    }
-
-    .anamenü {
-        padding: 10px;
     }
 }
 
