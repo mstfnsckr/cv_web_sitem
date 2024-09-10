@@ -172,7 +172,7 @@ html, body {
         margin-left: 0;
         width: 100%;
         padding: 10px;
-        margin-top: 240px; /* Sabit menü ile ana menü arasında 20px boşluk */
+        margin-top: 260px; /* Sabit menü ile ana menü arasında 20px boşluk */
     }
 
     .sabitmenu img {
